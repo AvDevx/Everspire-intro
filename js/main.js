@@ -12,11 +12,6 @@ TxtType.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
-    if (i == this.toRotate.length-1)
-        document.getElementById("color-yellow").style.color="yellow";
-    else
-        document.getElementById("color-yellow").style.color = "white";
-
     if (this.isDeleting) {
         this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
@@ -28,7 +23,7 @@ TxtType.prototype.tick = function () {
     var that = this;
     var delta = 160 - Math.random() * 100;
 
-    if (this.isDeleting) { delta /= 2; }
+    if (this.isDeleting) { delta /= 8; }
 
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
