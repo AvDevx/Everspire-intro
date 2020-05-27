@@ -148,6 +148,9 @@ p{
     h1{
         font-size: 1.8rem;
     }
+    h2{
+        font-size: 58px;
+    }
     .btn-outline{
         letter-spacing: 2px;
         font-size: 17px;
