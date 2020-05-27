@@ -138,6 +138,9 @@ p{
     }
 }
 @media screen and (max-width: 400px) {
+    body{
+        overflow-x: hidden;
+    }
     .btn-outline{
         letter-spacing: 2px;
         font-size: 14px;
@@ -147,6 +150,9 @@ p{
         align-self: start;
         justify-self: center;
         margin-top: 100px;
+    }
+    .nav > a:before{
+        width: 40px;
     }
 }
 
