@@ -145,12 +145,19 @@ p{
     body{
         overflow-x: hidden;
     }
+    h1{
+        font-size: 1.8rem;
+    }
     .btn-outline{
         letter-spacing: 2px;
-        font-size: 14px;
-        width: 300px;
+        font-size: 17px;
+        width: 80vw; 
+        position: fixed;
+        bottom: 20px;
+
     }
     .rolling-text{
+        margin-top: 24px;
         justify-self: center;
     }
     .nav > a:before{
