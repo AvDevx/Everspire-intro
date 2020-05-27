@@ -153,6 +153,7 @@ p{
     }
     .nav > a:before{
         width: 35px;
+        transform: translate(90px, 9px);
     }
 }
 
