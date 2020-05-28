@@ -1,56 +1,19 @@
-var TxtType = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
 
-TxtType.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-    var that = this;
-    var delta = 160 - Math.random() * 100;
-
-    if (this.isDeleting) { delta /= 8; }
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 300;
-    }
-
-    setTimeout(function () {
-        that.tick();
-    }, delta);
-};
-
-window.onload = function () {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #1a73e8}";
-    document.body.appendChild(css);
-};
+window.addEventListener('load', function () {
+    console.log('All assets are loaded')
+    const el = document.getElementsByClassName("text");
+    el[0].style.visibility = "visible";
+    var container = document.getElementById("container");
+    container.style.animation = "clip 2s ease";
+    setTimeout(function () { 
+        el[0].style.display = "none";
+        el[1].style.visibility = "visible";
+        container.style.animation = "clipan 2s ease";
+        setTimeout(function () {
+            el[1].style.display = "none";
+            el[2].style.visibility = "visible";
+            container.style.animation = "clipans 2s ease";
+            container.style.animationFillMode = "forwards";
+        }, 3000);  
+    }, 3000);
+})
