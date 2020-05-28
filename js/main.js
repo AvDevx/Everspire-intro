@@ -13,7 +13,6 @@ window.addEventListener('load', function () {
             el[1].style.display = "none";
             el[2].style.visibility = "visible";
             container.style.animation = "clipans 2s ease";
-            setTimeout(window.location.href = "http://www.w3schools.com" ,3000);
         }, 3000);  
     }, 3000);
 })
