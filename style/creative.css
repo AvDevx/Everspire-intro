@@ -15,7 +15,7 @@ h2{
     margin: 0 0 120px 0px;
     font-size: 75px;
     font-weight: 900;
-    font-family: "poppins";
+    font-family: "Calibri",'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     height: auto;
 }
 
@@ -54,7 +54,7 @@ body{
     padding: 0;
     background-color: rgb(2, 3, 7);
     overflow: hidden;
-    font-family: "open sans";
+    font-family: "Calibri",'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
 header{
