@@ -46,7 +46,7 @@ window.onload = function () {
     if (typeof (Storage) !== "undefined") {
         if (localStorage.clickcount) {
             localStorage.clickcount = Number(localStorage.clickcount) + 1;
-            if(localStorage.clickcount == 3){
+            if(localStorage.clickcount > 2){
                 window.location.href = "https://everspire.com/";
             }
         } else {
