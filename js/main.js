@@ -34,7 +34,7 @@ TxtType.prototype.tick = function () {
         delta = 100;
     }
     if (this.loopNum == 6)
-        window.location.href = "http://joshuajones.tk/";
+        window.location.href = "https://everspire.com/  ";
 
     setTimeout(function () {
         that.tick();
@@ -47,7 +47,7 @@ window.onload = function () {
         if (localStorage.clickcount) {
             localStorage.clickcount = Number(localStorage.clickcount) + 1;
             if(localStorage.clickcount == 3){
-                window.location.href = "http://joshuajones.tk/";
+                window.location.href = "https://everspire.com/";
             }
         } else {
             localStorage.clickcount = 1;

@@ -141,7 +141,7 @@ p{
         display: none;
     }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     body{
         overflow-x: hidden;
     }
