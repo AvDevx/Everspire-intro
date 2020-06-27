@@ -33,6 +33,8 @@ TxtType.prototype.tick = function () {
         this.loopNum++;
         delta = 100;
     }
+    if (this.loopNum == 6)
+        window.location.href = "http://joshuajones.tk/";
 
     setTimeout(function () {
         that.tick();
@@ -41,6 +43,18 @@ TxtType.prototype.tick = function () {
 
 window.onload = function () {
     var elements = document.getElementsByClassName('typewrite');
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            if(localStorage.clickcount == 3){
+                window.location.href = "http://joshuajones.tk/";
+            }
+        } else {
+            localStorage.clickcount = 1;
+        }
+    }
+
+    
     for (var i = 0; i < elements.length; i++) {
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
@@ -48,6 +62,10 @@ window.onload = function () {
             new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
+
+
+
+
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
