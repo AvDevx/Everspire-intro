@@ -8,6 +8,10 @@ var TxtType = function (el, toRotate, period) {
     this.isDeleting = false;
 };
 
+
+function load() { window.location.replace("https://everspire.com/") }
+
+
 TxtType.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
@@ -33,9 +37,9 @@ TxtType.prototype.tick = function () {
         this.loopNum++;
         delta = 100;
     }
-    if (this.loopNum == 6)
-        window.location.href = "https://everspire.com/  ";
-
+    if (this.loopNum == 6){
+        load();
+    }
     setTimeout(function () {
         that.tick();
     }, delta);
@@ -46,7 +50,7 @@ window.onload = function () {
     if (typeof (Storage) !== "undefined") {
         if (localStorage.clickcount) {
             localStorage.clickcount = Number(localStorage.clickcount) + 1;
-            if(localStorage.clickcount > 2){
+            if(localStorage.clickcount > 100){
                 window.location.href = "https://everspire.com/";
             }
         } else {
